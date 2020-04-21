@@ -1,0 +1,43 @@
+# ASP.NET
+# Build and test ASP.NET projects.
+# Add steps that publish symbols, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '$(solution)'
+
+- task: VSBuild@1
+  inputs:
+    solution: '$(solution)'
+    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+- task: VSTest@2
+  inputs:
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+- task: InstallSSHKey@0
+  inputs:
+    knownHostsEntry: 'gitlab.akvelon.net,10.0.0.170 ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBLNubagYj/mfpy05G3AWzCm4RTQGWGCIiMfTz+bF7/mxKIIXQ1Nra2j9v5no+CU//elq3UvUVjjDP35Akugkcf4='
+    sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCjb6zI5eEfRWl7ZEhINH6Tx2lr0rTjquB9+jCnlyBqRSASm9x6AMB7oNHsYgeo90glFKfOCuooMExK/NrBgoYr8YXjhnQUrq5luQo3SN+Ra7p/JlTTDYbEUbizTtVLEf9wr/nz6wMAvOqALKhthrO+y+lO+HxEPt8IallqpRUM2IFwyP5rR2AAMwhZ9/XzeYQwXK/fWWkxeg/iOxwOxsfgrsPOUZ30/g2eE0Zmj9hoDAvuVrKOUepgyfAscfYhGOzErF/vB0PRikxH9fgrB9FxeRV37ykIJF7nTSYfJ1WQWCIofeKshyBbP4o2LtQMQ55NT+gV89I3rPdYVPi/RoqL rp\egor.bryzgalov@o21'
+    sshPassphrase: 'passfrase'
+    sshKeySecureFile: 'Proc-Type: 4,ENCRYPTED DEK-Info: AES-128-CBC,979D1E5486D8AEA9F7D5353E344E8E05  0+vRPFKxnIKI5vjf7Md6o7ipGf7jznwt9U0hRzdlI77I86OAg4L5e4NakqyJpqa3 Yvfg0PhnQYdAqPz4Jqj7DIzlSrUfzwmFkJszl16h/q6Z44Ce5mcZrQn3S0MmN1Ll ux8zkqaMqMhSwt9TYxNpVH/1tQh/H6YJsP0QLli/W+8AU+QaaNh4I82+Z0/RUzRw +PSO3gv5I4/cAT8fvTLjOtAvc2qlVss9wcVXiBJXRS215M3NRTwmOjG6ZmSwizsi 6D+Lxd12XWevj6SOXJHU9Z8pBiwLzwDaGzQSSqLJk9d/gXnRTl5X5QbAbfMFjvzM NCyDpVXm0uIOcwPJQB3oJVl/XOd8lEYhOFSVJjytjPxB944OGZPseGphHwQXt092 Zjv0vSiZvhIRChpm7OmK0SKXXPbHhqLAOt27dXa3eMWLzR5b28Yq4YFi+qJpSLiI 96f3jj8dZBX8XtA7ujbMAj5+WnYwpk7KTCWuwi9b6zkkboSg9/xb5iKOmXTC+g3E ipEuZVsuoyPS2tFswCLKteLCQZ0mCKUX3DlUjD/f6FFnr4Fu3oMZrYwoW4uFZ0zK q8wL/sgfbFhYMkVswLIJYxN9lFYzyBQtxIgh8X34iQD+VfCNbzlVNIkMxW/onbdR fPHwq+yXQER6c2xER2EDM+zvVHR+zbidGQOAPtNsDQQFWXkw9FnglgrhmbpOzbbF cqY1vXGkYi8VLo1hOYMN5iNltJdk8X0WkOp1xbMlq5T3sy5KnhS0lyJLV8es7cYX 5p+mGnw0Oq5LPidye3QxcqEqOmkjtDVMt3VMwb51b7vWm/TTB6l7pBVTLXgflYTs iHNESy9k8D2Dbq6v08NcKO2GX7/RxuQBd+BdZwq5ES2TYqi2b7tkS1C2ufDbaquM RsflvdAiXWtkymInTmmejkuN4Baf0gnIqEHcQS4PgDMSC5yw9gSbO5pKYprtwklg CHhk556Mg3umL2OsPwVgqvMzFNStM3+RX2FsLj0M0gkhtbv/zK+9212hREWyPISy JemhAiJUnSU6ZG6n1lX259r2y+dvXO02vCIWhV2v6RKDXCkPIYw0pcqA480psYwR ZPlzHOD254Nfnl5u9Ra9wisVw7M5PQ+YsqK+i011yI0biZT/dSsroXbdsFmKfwyb 6ZXu5Y0CueEPtzUyf7x1q1NfAIGdtT0AjeJZODwc5kkUlSTc7lO099JM0FKz6xgx 0umeSa6tYmo8KcjNZMXPYeD7SPTctf/ZIkfI8JITUBjtKAKUn466KpYxMz2oX+EJ 2ysFM3RXByxMu90FYw0NuZolHOkGy02iU5M5xl8OTyalz5ueCTQ537GGRI/XAOEo ro+2g+Fa6tjEqJmxZsR/CCeZBpBn0iE9Tj00HjSSUnjSUp0A1imch7NTlnE2Qgwh +RDAmMKeJkymdyOSVeX/OmgInzJTUHZzVWCYggz20T3X8N2WdLgG76PIPAuQzKjf nR0fXueaB1+LF9OfeWkzsDmW5oY0AK9R0uGHgQYoyJXFBxS4hv3EPNLLRaPmkCT2 gSKJFSlHFswqgb3bSq11NwguqNRbRhE/ZYmc/1rv7Z/zpQoNPRL5EZCa46kppxW8'
+
+
