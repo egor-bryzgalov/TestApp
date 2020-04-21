@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-latest'
 
 variables:
   solution: '**/*.sln'
@@ -24,7 +24,10 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
-    projects: '**/*.csproj'
+
+
+
+
 
 
 
