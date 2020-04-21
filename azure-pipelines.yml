@@ -32,10 +32,16 @@ steps:
 ##    sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDhVhOwCOpr9F0BZJOTsSg6jzRGWOcvBhZTlybegEH+agYe6iDlzEoLMUQP3gkIaGpXsT9yNk00ogzqCvn3kH9Ehe+0DLU3aDJubX/JM+7TYIZfUxRirqjt3tA9jI1yEbomJxr6H75gI2BFLPNuPirnINYVL93FSda0ALbqNkK3XPysoKnddQSDuUNLxv4FntywcxvG1Ih4xLxnWLRLZgdsPofWW/Uq0EVVbLxHVMjDQBawemI0kizGu59uUQdOK823+RxCfordHHkPjBoCJjW5EsC0vtcCS56US/6KSdv0gajle6yIdF4+wpMTsndsGIdMp4irXaNHHxFBMNcJvUQN egor@DESKTOP-EGUSC8H'
 ##    sshKeySecureFile: 'id_rsa'
 
-- task: InstallSSHKeyM@0
+##- task: InstallSSHKeyM@0
+##  inputs:
+##    knownHostsEntry: 'github.com,140.82.118.4 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=='
+##    sshKeySecureFile: 'id_rsa'
+
+- task: InstallSSHKeyM2@0
   inputs:
     knownHostsEntry: 'github.com,140.82.118.4 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ=='
     sshKeySecureFile: 'id_rsa'
+
 
 
 
