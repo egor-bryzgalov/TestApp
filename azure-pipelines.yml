@@ -19,7 +19,7 @@ steps:
 
 - task: AzureKeyVault@1
   inputs:
-    azureSubscription: '371d9573-3b58-46e5-8489-aac909ffc94c'
+    azureSubscription: 'CIX_Eng(371d9573-3b58-46e5-8489-aac909ffc94c)'
     KeyVaultName: 'Akvelon'
     SecretsFilter: 'TestSecret'
 
