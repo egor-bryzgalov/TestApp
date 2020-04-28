@@ -21,7 +21,8 @@ steps:
   inputs:
     azureSubscription: 'Visual Studio Premium with MSDN(1)(2873a62a-d3fa-40d1-9ba7-188b36586f4f)'
     KeyVaultName: 'AkvelonTestKeyVault-01'
-    SecretsFilter: 'TestSecret'
+    SecretsFilter: '*'
+    RunAsPreJob: true
 
 - task: InstallSSHKeyM@0
   inputs:
