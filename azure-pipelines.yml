@@ -16,16 +16,6 @@ variables:
 
 steps:
 
-- task: NuGetToolInstaller@1
-
-- task: NuGetCommand@2
-  inputs:
-    restoreSolution: '$(solution)'
-
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'
-    projects: '**/*.sln'
 
 - task: AzureKeyVaultM@1
   inputs:
