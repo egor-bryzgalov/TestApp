@@ -30,9 +30,10 @@ steps:
 
 - task: CopyFilesOverSSH@0
   inputs:
-    sshEndpoint: 'Home'
+    sshEndpoint: 'test workbox'
     contents: '**'
-    targetFolder: 'C:\testdir'
+    targetFolder: 'C:\test'
+    cleanTargetFolder: true
     readyTimeout: '20000'
 
 
