@@ -23,7 +23,6 @@ steps:
     sshKeySecureFile: 'id_rsa'
 
 
-
 - task: CopyFilesOverSSHm@0
   inputs:
     sshEndpoint: 'test workbox'
