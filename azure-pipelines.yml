@@ -27,7 +27,7 @@ steps:
   inputs:
     sshEndpoint: 'test workbox'
     contents: '**'
-    targetFolder: 'C:\test'
+    targetFolder: 'C:/test'
     isWindowsOnTarget: true
     cleanTargetFolder: true
     readyTimeout: '20000'
