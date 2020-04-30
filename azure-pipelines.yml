@@ -29,9 +29,8 @@ steps:
     contents: '**'
     targetFolder: 'C:/test'
     isWindowsOnTarget: true
-    cleanTargetFolder: true
+    cleanTargetFolder: false
     readyTimeout: '20000'
-    flattenFolders: true
 
 
 
