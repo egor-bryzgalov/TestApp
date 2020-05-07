@@ -24,7 +24,7 @@ steps:
     
 - task: CopyFilesOverSSHmod@0
   inputs:
-    sshEndpoint: 'test workbox'
+    sshEndpoint: 'centos'
     contents: '**'
     targetFolder: '/home/centos/test'
     cleanTargetFolder: true
