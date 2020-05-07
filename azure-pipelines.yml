@@ -29,7 +29,7 @@ steps:
     contents: '**'
     targetFolder: 'C:/test'
     isWindowsOnTarget: false
-    cleanTargetFolder: false
+    cleanTargetFolder: true
     readyTimeout: '20000'
 
 
