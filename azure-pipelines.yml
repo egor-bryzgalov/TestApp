@@ -26,7 +26,7 @@ steps:
     azureResourceManagerEndpoint: 'Visual Studio Premium with MSDN(2873a62a-d3fa-40d1-9ba7-188b36586f4f)'
     azureStorageAccountName: 'abttstorage'
     azureContainerName: 'testcontainer'
-    azureCommonVirtualFile: '/openjdk/11.0.3_7/jdk-11.0.7_linux-x64_bin.tar.gz'
+    azureCommonVirtualFile: '*/jdk-11.0.7_linux-x64_bin.tar.gz'
     jdkDestinationDirectory: './openjdk'
     cleanDestinationDirectory: true
 
