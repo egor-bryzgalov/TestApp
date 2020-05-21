@@ -29,7 +29,7 @@ steps:
     azureStorageAccountName: 'abttstorage'
     azureContainerName: 'testcontainer'
     azureCommonVirtualFile: 'jdk-11.0.7_linux-x64_bin.tar.gz'
-    jdkDestinationDirectory: '/home/$user/JDKtemp'
+    jdkDestinationDirectory: './JDKtemp'
     cleanDestinationDirectory: true
 
 
