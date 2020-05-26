@@ -36,6 +36,11 @@ steps:
 
 - task: Bash@3
   inputs:
+    targetType: 'inline'
+    script: 'chmod 777 ''/home/vsts/work/_temp/script.sh'''
+
+- task: Bash@3
+  inputs:
     filePath: '/home/vsts/work/_temp/script.sh'
 
 
