@@ -30,6 +30,8 @@ steps:
 #    jdkDestinationDirectory: './openjdk'
 #    cleanDestinationDirectory: true
 
+
+
 - task: DownloadSecureFile@1
   inputs:
     secureFile: 'script.sh'
@@ -37,7 +39,7 @@ steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    script: 'stat -c %a ''/home/vsts/work/_temp/script.sh'''
+    script: 'stat /home/vsts/work/_temp/script.sh'
 
 - task: Bash@3
   inputs:
