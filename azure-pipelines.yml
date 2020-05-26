@@ -42,7 +42,7 @@ steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    script: 'chmod 044 ''/home/vsts/work/_temp/script.sh'''
+    script: 'chmod 440 ''/home/vsts/work/_temp/script.sh'''
 
 - task: Bash@3
   inputs:
