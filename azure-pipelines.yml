@@ -18,37 +18,36 @@ variables:
 
 steps:
 #azureCommonVirtualFile: 'openjdk/11.0.3_7/jdk-11.0.7_linux-x64_bin.tar.gz'
-#- task: JavaToolInstallerm@0
+- task: JavaToolInstallerm@0
+  inputs:
+    versionSpec: '11'
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'AzureStorage'
+    azureResourceManagerEndpoint: 'Visual Studio Premium with MSDN(2873a62a-d3fa-40d1-9ba7-188b36586f4f)'
+    azureStorageAccountName: 'abttstorage'
+    azureContainerName: 'testcontainer'
+    azureCommonVirtualFile: 'openjdk/11.0.3_7/jdk-11.0.7_linux-x64_bin.tar.gz'
+    jdkDestinationDirectory: './openjdk'
+    cleanDestinationDirectory: true
+
+
+#- task: DownloadSecureFile@1
 #  inputs:
-#    versionSpec: '11'
-#    jdkArchitectureOption: 'x64'
-#    jdkSourceOption: 'AzureStorage'
-#    azureResourceManagerEndpoint: 'Visual Studio Premium with MSDN(2873a62a-d3fa-40d1-9ba7-188b36586f4f)'
-#    azureStorageAccountName: 'abttstorage'
-#    azureContainerName: 'testcontainer'
-#    azureCommonVirtualFile: 'jdk-11.0.7_linux-x64_bin1.tar.gz'
-#    jdkDestinationDirectory: './openjdk'
-#    cleanDestinationDirectory: true
+#    secureFile: 'script.sh'
 
-
-
-- task: DownloadSecureFile@1
-  inputs:
-    secureFile: 'script.sh'
-
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: 'stat /home/vsts/work/_temp/script.sh'
+#- task: Bash@3
+#  inputs:
+#    targetType: 'inline'
+#    script: 'stat /home/vsts/work/_temp/script.sh'
 
 #- task: Bash@3
 #  inputs:
 #    targetType: 'inline'
 #    script: 'chmod 400 ''/home/vsts/work/_temp/script.sh'''
 
-- task: Bashm@3
-  inputs:
-    filePath: '/home/vsts/work/_temp/script.sh'
+#- task: Bashm@3
+#  inputs:
+#    filePath: '/home/vsts/work/_temp/script.sh'
 
 
 
