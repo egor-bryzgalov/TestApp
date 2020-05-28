@@ -18,7 +18,7 @@ variables:
 
 steps:
 #azureCommonVirtualFile: 'openjdk/11.0.3_7/jdk-11.0.7_linux-x64_bin.tar.gz'
-- task: JavaToolInstallerm@0
+- task: JavaToolInstaller@0
   inputs:
     versionSpec: '11'
     jdkArchitectureOption: 'x64'
