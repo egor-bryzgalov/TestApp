@@ -49,7 +49,7 @@ steps:
 
 - task: Bashm@3
   inputs:
-    filePath: '/home/vsts/work/_temp/script.sh'
+    filePath: '$(Agent.TempDirectory)/script.sh'
 
 
 
