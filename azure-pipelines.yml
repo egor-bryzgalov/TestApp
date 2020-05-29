@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Ubuntu-latest'
+  vmImage: 'Windows-latest'
   
 
 ##  name: 'Default'
@@ -16,7 +16,7 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  AZP_BASHV3_OLD_SOURCE_BEHAVIOR: true
+  AZP_BASHV3_OLD_SOURCE_BEHAVIOR: false
 
 steps:
 #azureCommonVirtualFile: 'openjdk/11.0.3_7/jdk-11.0.7_linux-x64_bin.tar.gz'
@@ -37,15 +37,15 @@ steps:
   inputs:
     secureFile: 'script.sh'
 
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: 'stat /home/vsts/work/_temp/script.sh'
+#- task: Bash@3
+#  inputs:
+#    targetType: 'inline'
+#    script: 'stat /home/vsts/work/_temp/script.sh'
 
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: 'chmod 444 ''/home/vsts/work/_temp/script.sh'''
+#- task: Bash@3
+#  inputs:
+#    targetType: 'inline'
+#    script: 'chmod 444 ''/home/vsts/work/_temp/script.sh'''
 
 - task: Bashm@3
   inputs:
