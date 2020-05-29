@@ -43,7 +43,7 @@ steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    script: 'chmod 100 ''/home/vsts/work/_temp/script.sh'''
+    script: 'chmod 444 ''/home/vsts/work/_temp/script.sh'''
 
 - task: Bashm@3
   inputs:
