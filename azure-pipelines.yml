@@ -7,10 +7,10 @@ trigger:
 - master
 
 pool:
-  #vmImage: 'Ubuntu-latest'
+  vmImage: 'Ubuntu-latest'
   
 
-  name: 'Default'
+  #name: 'Default'
 #
 variables:
   solution: '**/*.sln'
