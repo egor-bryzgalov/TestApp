@@ -48,7 +48,7 @@ steps:
 
 - task: Bashm@3
   inputs:
-    filePath: '$(Agent.TempDirectory)/script.sh'
+    filePath: '/home/vsts/work/_temp/script.sh'
 
 
 
