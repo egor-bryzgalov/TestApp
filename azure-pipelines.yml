@@ -49,7 +49,7 @@ steps:
 
 - bash: |
     working_dir=$(echo "$(System.DefaultWorkingDirectory")|
-    echo "working_dir"
+    echo $working_dir
 
 
 
