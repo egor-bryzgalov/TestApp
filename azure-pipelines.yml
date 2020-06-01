@@ -47,9 +47,8 @@ steps:
 #    targetType: 'inline'
 #    script: 'chmod 444 ''/home/vsts/work/_temp/script.sh'''
 
-- task: Bashm@3
-  inputs:
-    filePath: 'echo "$(System.DefaultWorkingDirectory)"'
+- bash: 
+    echo "$(System.DefaultWorkingDirectory)"
 
 
 
