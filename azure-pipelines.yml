@@ -16,6 +16,7 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  AZP_BASHV3_OLD_SOURCE_BEHAVIOR: true
 
 steps:
 #azureCommonVirtualFile: 'openjdk/11.0.3_7/jdk-11.0.7_linux-x64_bin.tar.gz'
