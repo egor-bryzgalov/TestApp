@@ -47,9 +47,11 @@ steps:
 #    targetType: 'inline'
 #    script: 'chmod 444 ''/home/vsts/work/_temp/script.sh'''
 
-- bash: |
-    working_dir= $(echo $(System.DefaultWorkingDirectory)) |
-    echo $working_dir
+- task: Bashm@3
+  inputs:
+    script: |
+      working_dir= $(echo $(System.DefaultWorkingDirectory)) |
+      echo $working_dir
 
 
 
