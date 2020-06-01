@@ -33,9 +33,9 @@ steps:
 #    cleanDestinationDirectory: true
 
 
-- task: DownloadSecureFile@1
-  inputs:
-    secureFile: 'script.sh'
+#- task: DownloadSecureFile@1
+#  inputs:
+#    secureFile: 'script.sh'
 
 #- task: Bash@3
 #  inputs:
