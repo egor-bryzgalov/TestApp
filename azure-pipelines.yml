@@ -7,10 +7,10 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Ubuntu-latest'
+  #vmImage: 'Ubuntu-latest'
   
 
-##  name: 'Default'
+  name: 'Default'
 #
 variables:
   solution: '**/*.sln'
@@ -49,7 +49,7 @@ steps:
 
 - task: Bashm@3
   inputs:
-    filePath: '/home/vsts/work/_temp/script.sh'
+    filePath: 'echo "$(System.DefaultWorkingDirectory)"'
 
 
 
