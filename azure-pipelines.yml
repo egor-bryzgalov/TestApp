@@ -51,6 +51,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
+      echo $(System.DefaultWorkingDirectory) |
       working_dir=$(echo $(System.DefaultWorkingDirectory)) |
       echo $working_dir
 
