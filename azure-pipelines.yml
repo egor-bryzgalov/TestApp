@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Windows-latest'
+  vmImage: 'Ubuntu-latest'
   
 
 ##  name: 'Default'
