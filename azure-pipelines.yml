@@ -49,8 +49,9 @@ steps:
 
 - task: Bashm@3
   inputs:
+    targetType: 'inline'
     script: |
-      working_dir= $(echo $(System.DefaultWorkingDirectory)) |
+      working_dir=$(echo $(System.DefaultWorkingDirectory)) |
       echo $working_dir
 
 
