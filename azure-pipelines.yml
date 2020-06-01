@@ -48,7 +48,7 @@ steps:
 #    script: 'chmod 444 ''/home/vsts/work/_temp/script.sh'''
 
 - bash: |
-    working_dir=$(echo "$(System.DefaultWorkingDirectory")|
+    working_dir=$(echo $(System.DefaultWorkingDirectory)|
     echo $working_dir
 
 
