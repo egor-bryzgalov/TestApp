@@ -7,10 +7,8 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Windows-latest'
-  
-
-  #name: 'Default'
+  #vmImage: 'Windows-latest'
+  name: 'Default'
 #
 variables:
   solution: '**/*.sln'
@@ -18,10 +16,15 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: MSBuild@1
+#- task: MSBuild@1
+#  inputs:
+#    solution: 'TestApp/*.sln'
+#    msbuildArchitecture: 'x64'
+
+- task: BatchScript@1
   inputs:
-    solution: 'TestApp/*.sln'
-    msbuildArchitecture: 'x64'
+    filename: 'D:\Test\script.bat'
+
 
 
 
