@@ -8,6 +8,8 @@ This is a dummy description that it's a testing project. The TestApp is a .NET C
 
 ## Work Item Information
 
+**Work Item ID**: AB#2
+
 This application was created based on the following work item fields:
 
 - **Description**: Add a dummy description that it's a testing project
