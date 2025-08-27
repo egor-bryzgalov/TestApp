@@ -6,21 +6,6 @@ This is a testing application created for development and testing purposes.
 
 This is a dummy description that it's a testing project. The TestApp is a .NET Core 3.1 web application designed specifically for testing various features and functionalities.
 
-## Work Item Information
-
-**Work Item ID**: AB#2
-
-This application was created based on the following work item fields:
-
-- **Description**: Add a dummy description that it's a testing project
-- **Acceptance Criteria**: 222
-- **Comments**: 
-  - test
-  - Test comment with a local button
-  - Test comment saved with main button  
-  - Adding more comments
-  - Some things
-
 ## Project Structure
 
 This is an ASP.NET Core MVC application with the following structure:
