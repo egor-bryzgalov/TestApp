@@ -20,3 +20,8 @@ Thumbs.db
 TestResults/
 *.trx
 *.coverage
+
+# Database files
+*.db
+*.db-shm
+*.db-wal
